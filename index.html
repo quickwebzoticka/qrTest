@@ -5,41 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Test qr</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #scanner {
+      width: 300px;
+    }
+  </style>
 </head>
 <body>
 
   <div id="scanner"></div>
-  <input type="text" id="scannedTextMemo">
+  <input type="text" id="scannedTextMemo" value="Ничего не отсканировано">
   
   <script src="js/jsqrscanner.nocache.js"></script>
-
-  <!-- <script>
-    function onQRCodeScanned(scannedText)
-    {
-    	var scannedTextMemo = document.getElementById("scannedTextMemo");
-    	if(scannedTextMemo)
-    	{
-    		scannedTextMemo.value = scannedText;
-    	}
-    }
-  
-    //this function will be called when JsQRScanner is ready to use
-    function JsQRScannerReady()
-    {
-        //create a new scanner passing to it a callback function that will be invoked when
-        //the scanner succesfully scan a QR code
-        var jbScanner = new JsQRScanner(onQRCodeScanned);
-        //reduce the size of analyzed images to increase performance on mobile devices
-        jbScanner.setSnapImageMaxSize(300);
-    	var scannerParentElement = document.getElementById("scanner");
-    	if(scannerParentElement)
-    	{
-    	    //append the jbScanner to an existing DOM element
-    		jbScanner.appendTo(scannerParentElement);
-    	}        
-    }
-  </script> -->
-
   <script>
     function onQRCodeScanned(scannedText)
     {
@@ -86,11 +67,11 @@
         //the scanner succesfully scan a QR code
         var jbScanner = new JsQRScanner(onQRCodeScanned, provideVideoQQ);
         //reduce the size of analyzed images to increase performance on mobile devices
-        jbScanner.setSnapImageMaxSize(300);
+        jbScanner.setSnapImageMaxSize(150);
     	var scannerParentElement = document.getElementById("scanner");
     	if(scannerParentElement)
     	{
-    	    //append the jbScanner to an existing DOM element
+    	  //append the jbScanner to an existing DOM element
     		jbScanner.appendTo(scannerParentElement);
     	}        
     }
