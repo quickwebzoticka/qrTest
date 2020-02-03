@@ -18,7 +18,7 @@
 <body>
 
   <div id="scanner"></div>
-  <input type="text" id="scannedTextMemo" value="Ничего не отсканировано">
+  <h1 id="scannedTextMemo">Не отсканировано</h1>
   
   <script src="js/jsqrscanner.nocache.js"></script>
   <script>
@@ -27,7 +27,7 @@
     	var scannedTextMemo = document.getElementById("scannedTextMemo");
     	if(scannedTextMemo)
     	{
-    		scannedTextMemo.value = scannedText;
+    		scannedTextMemo.innerText = scannedText;
     	}
     }
     
